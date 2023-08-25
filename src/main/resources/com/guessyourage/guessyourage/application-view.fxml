@@ -10,7 +10,7 @@
          <children>
             <Label text="We're going to find out what your REAL age is!" wrapText="true" />
             <Label text="Type your age:" />
-            <TextField fx:id="ageField" />
+            <TextField fx:id="ageField" onAction="#onGuessClick" />
             <HBox alignment="TOP_CENTER">
                <children>
                   <Button mnemonicParsing="false" onAction="#onGuessClick" text="Guess" />
