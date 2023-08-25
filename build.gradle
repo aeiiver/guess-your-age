@@ -6,7 +6,7 @@ plugins {
   id 'org.beryx.jlink' version '2.25.0'
 }
 
-group 'org.canieven'
+group 'com.guess-your-age'
 version '1.0-SNAPSHOT'
 
 repositories {
@@ -25,8 +25,8 @@ tasks.withType(JavaCompile) {
 }
 
 application {
-  mainModule = 'org.canieven.canieven'
-  mainClass = 'org.canieven.canieven.Application'
+  mainModule = 'com.guessyourage.guessyourage'
+  mainClass = 'com.guessyourage.guessyourage.Application'
 }
 
 javafx {

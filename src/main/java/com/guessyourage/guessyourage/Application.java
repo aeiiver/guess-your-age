@@ -1,4 +1,4 @@
-package org.canieven.canieven;
+package com.guessyourage.guessyourage;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;

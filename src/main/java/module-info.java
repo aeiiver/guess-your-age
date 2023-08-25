@@ -1,10 +1,10 @@
-module org.canieven.canieven {
+module com.guessyourage.guessyourage {
     requires javafx.controls;
     requires javafx.fxml;
 
     requires org.controlsfx.controls;
     requires net.synedra.validatorfx;
 
-    opens org.canieven.canieven to javafx.fxml;
-    exports org.canieven.canieven;
+    opens com.guessyourage.guessyourage to javafx.fxml;
+    exports com.guessyourage.guessyourage;
 }
