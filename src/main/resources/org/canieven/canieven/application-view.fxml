@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="280.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox fx:id="wrapper" spacing="20.0">
+         <children>
+            <Label text="We're going to find out what your REAL age is!" wrapText="true" />
+            <Label text="Type your age:" />
+            <TextField fx:id="ageField" />
+            <HBox alignment="TOP_CENTER">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#onGuessClick" text="Guess" />
+               </children>
+            </HBox>
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+      </VBox>
+   </children>
+</VBox>
