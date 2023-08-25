@@ -5,6 +5,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class Application extends javafx.application.Application {
     @Override
@@ -13,6 +14,7 @@ public class Application extends javafx.application.Application {
         fxmlLoader.setController(new ApplicationView(new ApplicationController()));
 
         Scene scene = new Scene(fxmlLoader.load());
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
         stage.setTitle("Guess your REAL age!");
         stage.setScene(scene);
         stage.show();
