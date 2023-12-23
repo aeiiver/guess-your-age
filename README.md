@@ -40,3 +40,8 @@ Run the application:
 ```shell
 ./build/image/bin/app
 ```
+
+### License
+
+MIT License or Public Domain, whichever fits your requirements. See
+[`LICENSE`](/LICENSE).
