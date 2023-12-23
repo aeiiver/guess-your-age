@@ -7,4 +7,8 @@ module com.guessyourage.guessyourage {
 
     opens com.guessyourage.guessyourage to javafx.fxml;
     exports com.guessyourage.guessyourage;
+    opens com.guessyourage.guessyourage.controllers to javafx.fxml;
+    exports com.guessyourage.guessyourage.controllers;
+    opens com.guessyourage.guessyourage.views to javafx.fxml;
+    exports com.guessyourage.guessyourage.views;
 }

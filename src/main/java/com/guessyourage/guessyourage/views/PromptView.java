@@ -1,9 +1,9 @@
-package com.guessyourage.guessyourage;
+package com.guessyourage.guessyourage.views;
 
+import com.guessyourage.guessyourage.ApplicationSceneType;
+import com.guessyourage.guessyourage.controllers.PromptController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import net.synedra.validatorfx.Validator;
@@ -11,36 +11,34 @@ import net.synedra.validatorfx.Validator;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ApplicationView implements Initializable {
-    private final ApplicationController controller;
+public class PromptView implements View {
     private final Validator validator = new Validator();
+    private final PromptController controller = new PromptController();
 
-    @FXML private VBox root;
-    @FXML private VBox wrapper;
-    @FXML private TextField ageField;
+    @FXML
+    private VBox root;
+    @FXML
+    private TextField ageField;
 
-    private Label answerLabel;
-
-    public ApplicationView(ApplicationController controller) {
-        this.controller = controller;
-    }
-
-    @FXML private void onGuessClick(ActionEvent actionEvent) {
+    @FXML
+    private void onGuessClick(ActionEvent actionEvent) {
         if (validator.validate()) {
-            if (answerLabel == null) {
-                answerLabel = new Label();
-                wrapper.getChildren().add(answerLabel);
-            }
-
             try {
                 int age = Integer.parseInt(ageField.getText());
-                controller.guessAge(age, answerLabel);
+                int guess = controller.guessAge(age);
+                String msg = String.format("Your REAL age is %d.", guess);
+                ApplicationSceneType.ANSWER.dontResizeNext().load(msg);
             } catch (NumberFormatException e) {
-                throw new RuntimeException("Unreachable");
+                assert false : "Unreachable";
             }
         } else {
             ageField.requestFocus();
         }
+    }
+
+    @Override
+    public void load(Object data) {
+        // Nothing to load
     }
 
     @Override
